@@ -48,11 +48,22 @@ Swal.fire({
       text: "You have exited.",
       icon: "success"
     });
-    location.href="login.html"
+    location.href="index.html"
   }
 });
 
 })
+document.addEventListener("DOMContentLoaded",()=>{
+const path=window.location.pathname.toLowerCase();
+if(path.includes("/product.html")){
+display();
+}
+if(path.includes("/add_product.html")){
+  display();
+}
+})
+
+
 //Cards products (product page)
 function display(){
 let saved_products=JSON.parse(localStorage.getItem("products"||[]))
@@ -155,6 +166,7 @@ if(added && cartnum > 0){
           });
          }); 
         });
+
 
 
 
